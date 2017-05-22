@@ -1,5 +1,6 @@
 <?php
 date_default_timezone_set('Europe/Amsterdam');
+error_reporting(null);
 
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/hanze.php';
@@ -23,8 +24,14 @@ $objReader = new PHPExcel_Reader_Excel2007();
 $objReader->setReadDataOnly(true); //optional
 $objPHPExcel = $objReader->load(stream_get_meta_data($tmpFile)['uri']);
 
-// All the information is based in the first sheet
-$sheet = $objPHPExcel->getSheet(0);
+try {
+    // All the information is based in the first sheet
+    $sheet = $objPHPExcel->getSheet(0);
+} catch(PHPExcel_Exception $e) {
+    // If loading of the excel sheet doesn't work, then die
+    die("Died because Excel sheet is corrupt \n");
+}
+
 
 // First let's clear all the old events
 $googleClient = getGoogleClient();
