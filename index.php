@@ -23,7 +23,6 @@ $objReader = new PHPExcel_Reader_Excel2007();
 $objReader->setReadDataOnly(true); //optional
 $objPHPExcel = $objReader->load(stream_get_meta_data($tmpFile)['uri']);
 
-
 // All the information is based in the first sheet
 $sheet = $objPHPExcel->getSheet(0);
 
