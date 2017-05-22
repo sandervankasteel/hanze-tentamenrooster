@@ -24,7 +24,7 @@ class Hanze
         // trusted:0
 
         $client = new \GuzzleHttp\Client(['cookies' => true]);
-        $client->request('POST', $_ENV['HANZE_LOGON_URL'], [
+        $response = $client->request('POST', $_ENV['HANZE_LOGON_URL'], [
             'headers' => [
                 'Origin' => 'https://www.hanze.nl',
                 'Refer' => 'https://www.hanze.nl/CookieAuth.dll?GetLogon?curl=Z2F_layoutsZ2F15Z2FAuthenticate.aspxZ3FSourceZ3DZ2Fnld&reason=0&formdir=3',
