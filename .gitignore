@@ -1,0 +1,4 @@
+.idea
+client_secret.json
+/vendor/
+.env
