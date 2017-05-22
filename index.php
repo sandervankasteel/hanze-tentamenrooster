@@ -1,4 +1,11 @@
 <?php
+/*
+ * Hanze Tentamenrooster
+ * This application loads an excel sheet from the website of the Hanze and loads each relevant event into Google Calender
+ * Written by Sander van Kasteel <info -at- sandervankasteel.nl>
+ * License: MIT
+ */
+
 date_default_timezone_set('Europe/Amsterdam');
 error_reporting(null);
 
